@@ -1,6 +1,6 @@
 [
   "-scheme", "TestsCI",
-  "-configuration", "Debug",
+  "-configuration", "Release",
   "-sdk", "iphonesimulator",
   "-arch", "i386"
 ]
