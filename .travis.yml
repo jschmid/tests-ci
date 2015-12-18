@@ -6,4 +6,4 @@ notifications:
   email: false
 
 script:
-    - xctool -scheme TestsCI clean test
+    - bundle exec fastlane test
