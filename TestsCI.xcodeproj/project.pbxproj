@@ -14,6 +14,7 @@
 		DDBCA9291C24492700E8BB95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBCA9271C24492700E8BB95 /* LaunchScreen.storyboard */; };
 		DDBCA9341C24492700E8BB95 /* TestsCITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBCA9331C24492700E8BB95 /* TestsCITests.swift */; };
 		DDBCA93F1C24492700E8BB95 /* TestsCIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBCA93E1C24492700E8BB95 /* TestsCIUITests.swift */; };
+		DDBFE30F1C244B65006838AA /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFE30E1C244B65006838AA /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		DDBCA93A1C24492700E8BB95 /* TestsCIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestsCIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBCA93E1C24492700E8BB95 /* TestsCIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsCIUITests.swift; sourceTree = "<group>"; };
 		DDBCA9401C24492700E8BB95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDBFE30E1C244B65006838AA /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				DDBCA9251C24492700E8BB95 /* Assets.xcassets */,
 				DDBCA9271C24492700E8BB95 /* LaunchScreen.storyboard */,
 				DDBCA92A1C24492700E8BB95 /* Info.plist */,
+				DDBFE30E1C244B65006838AA /* Calculator.swift */,
 			);
 			path = TestsCI;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				DDBCA9211C24492700E8BB95 /* ViewController.swift in Sources */,
 				DDBCA91F1C24492700E8BB95 /* AppDelegate.swift in Sources */,
+				DDBFE30F1C244B65006838AA /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +486,7 @@
 				DDBCA9451C24492700E8BB95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DDBCA9461C24492700E8BB95 /* Build configuration list for PBXNativeTarget "TestsCITests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +495,7 @@
 				DDBCA9481C24492700E8BB95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DDBCA9491C24492700E8BB95 /* Build configuration list for PBXNativeTarget "TestsCIUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +504,7 @@
 				DDBCA94B1C24492700E8BB95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
