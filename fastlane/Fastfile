@@ -28,7 +28,6 @@ platform :ios do
   desc "Build Carthage dependencies in CI"
   lane :carthageci do
     carthage(
-      use_ssh: true,
       use_binaries: false,
       platform: "iOS"
     )
