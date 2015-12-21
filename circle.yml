@@ -1,6 +1,9 @@
 machine:
   xcode:
     version: "7.1"
+  environment:
+    XCODE_PROJECT: TestsCI.xcodeproj
+    XCODE_SCHEME: TestsCI
 dependencies:
   cache_directories:
     - "~/Library/Caches/org.carthage.CarthageKit"
