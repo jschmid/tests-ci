@@ -25,6 +25,16 @@ platform :ios do
   before_all do
   end
 
+  desc "Check that the project files are up-to-date"
+  lane :checkproject do
+    Dir.chdir("..") do
+      sh "make identifiers"
+      sh "make sort-project"
+    end
+
+    ensure_git_status_clean
+  end
+
   desc "Build Carthage dependencies in CI"
   lane :carthageci do
     carthage(

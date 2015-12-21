@@ -12,9 +12,12 @@ notifications:
 before_install:
     - brew update
     - brew upgrade carthage || brew install carthage
+    - brew upgrade xctool || brew install xctool
+    - brew upgrade swiftgen || brew install swiftgen
 install:
     - bundle install --without development --deployment --jobs=3 --retry=3
     - tools/carthage_cache_ci.sh
 
 script:
+    - bundle exec fastlane checkproject
     - bundle exec fastlane test
