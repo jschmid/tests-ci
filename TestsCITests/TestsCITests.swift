@@ -26,5 +26,14 @@ class TestsCITests: XCTestCase {
         let result = calculator.add(1, 2)
         XCTAssertEqual(result, 3)
     }
+
+    func testUser() {
+        let json = "{\"id\": 4, \"name\": \"John\"}"
+        let manager = UserManager()
+        let user = manager.getUser(json)
+
+        XCTAssertNotNil(user)
+        XCTAssertEqual(user?.name, "John")
+    }
     
 }

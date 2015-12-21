@@ -5,5 +5,11 @@ cache: bundler
 notifications:
   email: false
 
+before_install:
+    - brew update
+    - brew upgrade carthage || brew install carthage
+after_install:
+    - tools/carthage_cache_ci.sh
+
 script:
     - bundle exec fastlane test
