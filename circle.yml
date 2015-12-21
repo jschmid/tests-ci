@@ -1,0 +1,24 @@
+machine:
+  xcode:
+    version: "7.1"
+dependencies:
+  cache_directories:
+    - "~/Library/Caches/org.carthage.CarthageKit"
+    - "./Carthage"
+  pre:
+    - brew update
+    - brew upgrade carthage || brew install carthage
+    - brew upgrade xctool || brew install xctool
+    - brew upgrade swiftgen || brew install swiftgen
+    - sudo gem update --system
+    - sudo gem install bundler
+  post:
+    - bundle exec fastlane enable_crash_reporting
+    - tools/carthage_cache_ci.sh:
+        timeout: 1200 # 20 minutes
+test:
+  pre:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+  override:
+    - bundle exec fastlane checkproject
+    - bundle exec fastlane test
