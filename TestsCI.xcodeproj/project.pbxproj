@@ -14,6 +14,9 @@
 		DDBCA9291C24492700E8BB95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBCA9271C24492700E8BB95 /* LaunchScreen.storyboard */; };
 		DDBCA9341C24492700E8BB95 /* TestsCITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBCA9331C24492700E8BB95 /* TestsCITests.swift */; };
 		DDBFE30F1C244B65006838AA /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFE30E1C244B65006838AA /* Calculator.swift */; };
+		DDBFE3141C27F097006838AA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFE3131C27F097006838AA /* User.swift */; };
+		DDBFE3161C27F15F006838AA /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDBFE3151C27F15F006838AA /* ObjectMapper.framework */; };
+		DDBFE3181C27F212006838AA /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFE3171C27F212006838AA /* UserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		DDBCA9331C24492700E8BB95 /* TestsCITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsCITests.swift; sourceTree = "<group>"; };
 		DDBCA9351C24492700E8BB95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDBFE30E1C244B65006838AA /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		DDBFE3131C27F097006838AA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DDBFE3151C27F15F006838AA /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		DDBFE3171C27F212006838AA /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDBFE3161C27F15F006838AA /* ObjectMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +68,7 @@
 		DDBCA9121C24492700E8BB95 = {
 			isa = PBXGroup;
 			children = (
+				DDBFE3151C27F15F006838AA /* ObjectMapper.framework */,
 				DDBCA91D1C24492700E8BB95 /* TestsCI */,
 				DDBCA9321C24492700E8BB95 /* TestsCITests */,
 				DDBCA91C1C24492700E8BB95 /* Products */,
@@ -86,6 +94,8 @@
 				DDBCA9271C24492700E8BB95 /* LaunchScreen.storyboard */,
 				DDBCA92A1C24492700E8BB95 /* Info.plist */,
 				DDBFE30E1C244B65006838AA /* Calculator.swift */,
+				DDBFE3131C27F097006838AA /* User.swift */,
+				DDBFE3171C27F212006838AA /* UserManager.swift */,
 			);
 			path = TestsCI;
 			sourceTree = "<group>";
@@ -109,6 +119,7 @@
 				DDBCA9171C24492700E8BB95 /* Sources */,
 				DDBCA9181C24492700E8BB95 /* Frameworks */,
 				DDBCA9191C24492700E8BB95 /* Resources */,
+				DDBFE3121C27F038006838AA /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -195,13 +206,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DDBFE3121C27F038006838AA /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DDBCA9171C24492700E8BB95 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDBFE3141C27F097006838AA /* User.swift in Sources */,
 				DDBCA9211C24492700E8BB95 /* ViewController.swift in Sources */,
 				DDBCA91F1C24492700E8BB95 /* AppDelegate.swift in Sources */,
+				DDBFE3181C27F212006838AA /* UserManager.swift in Sources */,
 				DDBFE30F1C244B65006838AA /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +360,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TestsCI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pro.schmid.TestsCI;
@@ -340,6 +375,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TestsCI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pro.schmid.TestsCI;
