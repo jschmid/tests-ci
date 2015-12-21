@@ -45,7 +45,16 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    xctool :test
+    if ENV['CIRCLECI']
+      params = [
+        "-reporter",  "plain:" + ENV['CIRCLE_TEST_REPORTS'] + "/plain-output.txt",
+        "-reporter",  "junit:" + ENV['CIRCLE_TEST_REPORTS'] + "/junit/junit.xml",
+      ]
+    else
+      params = []
+    end
+
+    xctool :test, params.join(" ")
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
