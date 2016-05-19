@@ -22,3 +22,5 @@ install:
 script:
     - bundle exec fastlane checkproject
     - bundle exec fastlane test
+
+after_success: bundle exec slather
